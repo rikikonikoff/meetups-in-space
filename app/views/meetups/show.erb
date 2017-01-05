@@ -1,0 +1,18 @@
+<p><%= @success %></p>
+<h1><%= @meetup.name %></h1>
+<p>Location: <%= @meetup.location.name %> <%= @meetup.location.address %></p>
+<p>Description: <%= @meetup.description %></p>
+<p>Created By: <%= @meetup.creator.username %></p>
+
+<form action="/meetups/<%= @meetup.id %>" method="post">
+  <input type="submit" value="Attend this Event"></input>
+</form>
+
+<p><%= @error %> </p>
+
+<br />
+<br />
+<p>Attending this Meetup: </p>
+<% @meetup.users.each do |user| %>
+  <p><img src="<%= user.avatar_url %>" height=75px></img> <%= user.username %></p>
+<% end %>

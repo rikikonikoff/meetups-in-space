@@ -1,0 +1,33 @@
+<h1>Add a new Meetup</h1>
+
+<form action="/meetups/new" method="post" id="meetup_form">
+  <div>
+    <label for="name">Event Name</label>
+    <br />
+    <input type="text" name="name" id="name" value="<%=@name%>"></input>
+  </div>
+
+  <div>
+    <label for="location_name">Location Name</label>
+    <br />
+    <input type="text" name="location_name" id="location_name" value="<%=@location_name%>"></input>
+  </div>
+
+  <div>
+    <label for="address">Location Address</label>
+    <br />
+    <input type="text" name="address" id="address"value="<%=@address%>"></input>
+  </div>
+
+  <div>
+    <label for="description">Event Description</label>
+    <br />
+    <input type="text-area" name="description" id="description"value="<%=@description%>"></input>
+  </div>
+
+  <div>
+    <input type="submit" value="Create Meetup"></input>
+  </div>
+</form>
+
+<p><%= @error %></p>
